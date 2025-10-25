@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Trabalho </title>
+</head>
+<body>
+    
+    <script>
+        let turmaADS = [
+            0, 1, 2, 3, 4
+        ];
+        
+        let nota1 = [];
+        let nota2 = [];
+        let media = [];
+
+        for(let i = 0; i < turmaADS.length ; i++){
+             nota1[i] = parseInt(prompt(`Digite a nota do aluno ${[i+1]}`));
+             nota2[i] = parseInt(prompt(`Digite a nota2 do aluno ${[i+1]}`));
+             media[i] = (nota1 + nota2) / 2;
+        }
+
+        document.write(media[2]);
+        
+    </script>
+
+</body>
+</html>
