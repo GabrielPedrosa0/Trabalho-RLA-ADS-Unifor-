@@ -10,20 +10,54 @@
     
     <script>
         let turmaADS = [
-            0, 1, 2, 3, 4
-        ];
-        
+            "Ana Beatriz ", "João Pedro ", "Camila Rodrigues"
+        ]   
+
         let nota1 = [];
         let nota2 = [];
         let media = [];
 
+        let aprovados = [];
+        let reprovados = [];
+
+
         for(let i = 0; i < turmaADS.length ; i++){
-             nota1[i] = parseInt(prompt(`Digite a nota do aluno ${[i+1]}`));
-             nota2[i] = parseInt(prompt(`Digite a nota2 do aluno ${[i+1]}`));
-             media[i] = (nota1 + nota2) / 2;
+            nota1[i] = parseInt(prompt(`Digite a nota da Avaliação 1 do aluno(a) ${turmaADS[i]}`));
+            nota2[i] = parseInt(prompt(`Digite a nota da Avaliação 2 do aluno(a) ${turmaADS[i]}`));
+            media[i] = (nota1[i] + nota2[i]) / 2;
         }
 
-        document.write(media[2]);
+        let soma = 0;
+        for(let i = 0; i < media.length; i++){
+                soma =+ media[i];
+        }
+
+        let mediaGeral = soma / media.length;
+
+        document.write(`A media geral da turma é <strong>${mediaGeral}</strong>`);
+
+        for(let i = 0; i < turmaADS.length; i++){
+            
+            document.write("<ul>")
+                if(media[i] > 5){
+                    document.write(`<li>Aluno(a) ${turmaADS[i]}, aprovado com ${media[i]} </li>`)
+                } else {
+                    document.write(`<li>Aluno(a) ${turmaADS[i]}, não aprovado, com medía ${media[i]}</li>`)
+                };
+            document.write("</ul>")
+            
+            
+            if(media[i] < 5){
+                reprovados++;
+            }else{
+                aprovados++;
+            }
+
+        };
+
+        document.write(`<br>Total de Aprovados: <strong>${aprovados}</strong>`)
+
+        document.write(`<br>Total de Reprovados: <strong>${reprovados}</strong>`)
         
     </script>
 
