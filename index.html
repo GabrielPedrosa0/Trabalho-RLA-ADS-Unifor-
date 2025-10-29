@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Trabalho </title>
 </head>
 <body>
@@ -12,6 +11,7 @@
         let turmaADS = [
             "Ana Beatriz ", "João Pedro ", "Camila Rodrigues"
         ]   
+        
 
         let nota1 = [];
         let nota2 = [];
@@ -22,8 +22,8 @@
 
 
         for(let i = 0; i < turmaADS.length ; i++){
-            nota1[i] = parseInt(prompt(`Digite a nota da Avaliação 1 do aluno(a) ${turmaADS[i]}`));
-            nota2[i] = parseInt(prompt(`Digite a nota da Avaliação 2 do aluno(a) ${turmaADS[i]}`));
+            // nota1[i] = parseInt(prompt(`Digite a nota da Avaliação 1 do aluno(a) ${turmaADS[i]}`));
+            // nota2[i] = parseInt(prompt(`Digite a nota da Avaliação 2 do aluno(a) ${turmaADS[i]}`));
             media[i] = (nota1[i] + nota2[i]) / 2;
         }
 
