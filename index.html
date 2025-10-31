@@ -20,36 +20,32 @@
     <script>
 
         let turma = [
-            { nome: "Ana Beatriz", nota1: 8, nota2: 7},
-            { nome: "João Pedro", nota1: 5, nota2:9},
-            { nome: "Camila Rodrigues", nota1: 6, nota2: 4},
-            { nome: "Lucas Martins", nota1: 10, nota2: 9},
-            { nome: "Mariana Costa", nota1: 3, nota2: 7},
-            { nome: "Felipe Carvalho", nota1: 4, nota2:5},
-            { nome: "Patrícia Gomes", nota1: 9, nota2: 8},
-            { nome: "Bruno Ferreira", nota1: 2, nota2: 6},
-            { nome: "Larissa Moura", nota1: 10, nota2: 0},
-            { nome: "Rafael Almeida", nota1: 7, nota2: 5},
-            { nome: "Juliana Santos", nota1: 6, nota2: 6},
-            { nome: "Eduardo Lima", nota1: 8, nota2: 4},
-            { nome: "Sofia Rocha", nota1: 9, nota2: 9},
-            { nome: "Gustavo Pires", nota1: 5, nota2: 3},
-            { nome: "Beatriz Nogueira", nota1: 7, nota2:0}
+            "Beatriz Nogueira", "Gustavo Pires", "Sofia Rocha", "Juliana Santos", "Eduardo Lima", "Rafael Almeida", 
         ];
 
-        let aprovados = 0;
-        let reprovados = 0;
+
+        let nota1 = [];
+        let nota2 = [];
 
         for(let i = 0; i < turma.length; i++){
-            let media = (turma[i].nota1 + turma[i].nota2) / 2
+            nota1[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 1`));
+            nota2[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 2`));
+        }
+
+
+        var aprovados = 0;
+        var reprovados = 0;
+
+        for(let i = 0; i < turma.length; i++){
+            var media = (nota1[i] + nota2[i]) / 2
             turma[i].media = media;
 
             document.write("<ul>");
             if(media > 5){
-                document.write(`<li>Aluno(a) <strong>${turma[i].nome}</strong>, foi aprovado(a) com média: ${media}</li>`)
+                document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi aprovado(a) com média: ${media}</li>`)
                 aprovados++
             } else {
-                document.write(`<li>Aluno(a) <strong>${turma[i].nome}</strong>, foi reprovado(a) com média: ${media}</li>`)
+                document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi reprovado(a) com média: ${media}</li>`)
                 reprovados++
             }
             document.write("</ul>")
@@ -59,7 +55,8 @@
         document.write(`<p>1. Quantidade de alunos <strong>Aprovados:</strong> ${aprovados}</p>`)
 
         document.write(`<p>2. Quantidade de alunos <strong>Reprovados:</strong> ${reprovados}</p>`)
-        
+
+        // Faltado: 1. Ordenação das notas  2. mosta a media geral da turma       
     </script>
 
 </body>
