@@ -31,17 +31,12 @@
             {nome: "Rafael Almeida"}
         ]
         for(let aluno of turma) {
-            aluno.nota1 = ParseFloat(prompt("Digite a nota 1 do aluno" + aluno.nome));
+            aluno.nota1 = parseFloat(prompt("Digite a nota 1 do aluno" + aluno.nome));
             while(isNaN(aluno.nota1)){
-                aluno.nota1 = ParseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));
-
-            aluno.nota2 = ParseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
+                aluno.nota1 = parseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));}
+            aluno.nota2 = parseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
             while(isNaN(aluno.nota2)){
-                aluno.nota2 = ParseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));
-            }
-
-            }
-        
+                aluno.nota2 = parseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));}
         }
 
         // for(let i = 0; i < turma.length; i++){
