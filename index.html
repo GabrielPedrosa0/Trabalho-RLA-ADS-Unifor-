@@ -19,38 +19,55 @@
     
     <script>
 
-        let turma = [
-            "Beatriz Nogueira", "Gustavo Pires", "Sofia Rocha", "Juliana Santos", "Eduardo Lima", "Rafael Almeida", 
-        ];
+        // let turma = [
+        //     "Beatriz Nogueira", "Gustavo Pires", "Sofia Rocha", "Juliana Santos", "Eduardo Lima", "Rafael Almeida", 
+        // ];
+        let turma =  [
+            {nome: "Beatriz Nogueira"},
+            {nome: "Gustavo Pires"},
+            {nome: "Sofia Rocha"},
+            {nome: "Juliana Santos"},
+            {nome: "Eduardo Lima"},
+            {nome: "Rafael Almeida"}
+        ]
+        for(let aluno of turma) {
+            aluno.nota1 = ParseFloat(prompt("Digite a nota 1 do aluno" + aluno.nome));
+            while(isNaN(aluno.nota1)){
+                aluno.nota1 = ParseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));
 
+            aluno.nota2 = ParseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
+            while(isNaN(aluno.nota2)){
+                aluno.nota2 = ParseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));
+            }
 
-        let nota1 = [];
-        let nota2 = [];
-
-        for(let i = 0; i < turma.length; i++){
-            nota1[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 1`));
-            nota2[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 2`));
+            }
+        
         }
+
+        // for(let i = 0; i < turma.length; i++){
+        //     nota1[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 1`));
+        //     nota2[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 2`));
+        // }
 
 
         var aprovados = 0;
         var reprovados = 0;
 
-        for(let i = 0; i < turma.length; i++){
-            var media = (nota1[i] + nota2[i]) / 2
-            turma[i].media = media;
+        // for(let i = 0; i < turma.length; i++){
+        //     var media = (nota1[i] + nota2[i]) / 2
+        //     turma[i].media = media;
 
-            document.write("<ul>");
-            if(media > 5){
-                document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi aprovado(a) com média: ${media}</li>`)
-                aprovados++
-            } else {
-                document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi reprovado(a) com média: ${media}</li>`)
-                reprovados++
-            }
-            document.write("</ul>")
+        //     document.write("<ul>");
+        //     if(media > 5){
+        //         document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi aprovado(a) com média: ${media}</li>`)
+        //         aprovados++
+        //     } else {
+        //         document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi reprovado(a) com média: ${media}</li>`)
+        //         reprovados++
+        //     }
+        //     document.write("</ul>")
                 
-        };
+        // };
 
         document.write(`<p>1. Quantidade de alunos <strong>Aprovados:</strong> ${aprovados}</p>`)
 
