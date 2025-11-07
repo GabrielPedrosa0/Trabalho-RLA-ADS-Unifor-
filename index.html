@@ -19,9 +19,6 @@
     
     <script>
 
-        // let turma = [
-        //     "Beatriz Nogueira", "Gustavo Pires", "Sofia Rocha", "Juliana Santos", "Eduardo Lima", "Rafael Almeida", 
-        // ];
         let turma =  [
             {nome: "Beatriz Nogueira"},
             {nome: "Gustavo Pires"},
@@ -30,25 +27,32 @@
             {nome: "Eduardo Lima"},
             {nome: "Rafael Almeida"}
         ]
-        for(let aluno of turma) {
-            aluno.nota1 = parseFloat(prompt("Digite a nota 1 do aluno" + aluno.nome));
-            while(isNaN(aluno.nota1) || aluno.nota1 < 0 || aluno.nota1 > 10) {
-                aluno.nota1 = parseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));}
-            aluno.nota2 = parseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
-            while(isNaN(aluno.nota2) || aluno.nota2 < 0 || aluno.nota2 > 10) {
-                aluno.nota2 = parseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));}
-                aluno.media = (aluno.nota1 + aluno.nota2) / 2;
-        }
-        let aprovados = 0
-        let reprovados = 0
 
-      for(let i = 0; i < turma.length; i++){
-        if(turma[i].media > 5){
-            aprovados++;
-        }else{
-            reprovados++;
+        for(let aluno of turma) {
+        aluno.nota1 = parseFloat(prompt("Digite a nota 1 do aluno" + aluno.nome));
+            while(isNaN(aluno.nota1) || aluno.nota1 < 0 || aluno.nota1 > 10) {
+                aluno.nota1 = parseFloat(prompt("Resposta Inválida! Digite novamente uma nota de 0 a 10 para o aluno: " + aluno.nome))
+            };
+
+        aluno.nota2 = parseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
+            while(isNaN(aluno.nota2) || aluno.nota2 < 0 || aluno.nota2 > 10) {
+                aluno.nota2 = parseFloat(prompt("Resposta Inválida! Digite novamente uma nota de 0 a 10 para o aluno: " + aluno.nome))
+            };
+
+        aluno.media = (aluno.nota1 + aluno.nota2) / 2;
         }
-      }
+        
+        let aprovados = 0;
+        let reprovados = 0;
+
+        for(let i = 0; i < turma.length; i++){
+            if(turma[i].media > 5){
+                aprovados++;
+            }else{
+                reprovados++;
+            }
+        }
+
        document.write("aprovados: " + aprovados +'</br>' );
        document.write("reprovados: " + reprovados);
 
