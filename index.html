@@ -37,38 +37,25 @@
             aluno.nota2 = parseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
             while(isNaN(aluno.nota2) || aluno.nota2 < 0 || aluno.nota2 > 10) {
                 aluno.nota2 = parseFloat(prompt("Inválida! Digite uma nota de 0 a 10 para o aluno" + aluno.nome));}
+                aluno.media = (aluno.nota1 + aluno.nota2) / 2;
         }
+        let aprovados = 0
+        let reprovados = 0
 
-        // for(let i = 0; i < turma.length; i++){
-        //     nota1[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 1`));
-        //     nota2[i] = parseFloat(prompt(`Digite a nota do ${turma[i]}, na Avaliação 2`));
-        // }
+      for(let i = 0; i < turma.length; i++){
+        if(turma[i].media > 5){
+            aprovados++;
+        }else{
+            reprovados++;
+        }
+      }
+       document.write("aprovados: " + aprovados +'</br>' );
+       document.write("reprovados: " + reprovados);
 
 
-        var aprovados = 0;
-        var reprovados = 0;
-
-        // for(let i = 0; i < turma.length; i++){
-        //     var media = (nota1[i] + nota2[i]) / 2
-        //     turma[i].media = media;
-
-        //     document.write("<ul>");
-        //     if(media > 5){
-        //         document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi aprovado(a) com média: ${media}</li>`)
-        //         aprovados++
-        //     } else {
-        //         document.write(`<li>Aluno(a) <strong>${turma[i]}</strong>, foi reprovado(a) com média: ${media}</li>`)
-        //         reprovados++
-        //     }
-        //     document.write("</ul>")
-                
-        // };
-
-        document.write(`<p>1. Quantidade de alunos <strong>Aprovados:</strong> ${aprovados}</p>`)
-
-        document.write(`<p>2. Quantidade de alunos <strong>Reprovados:</strong> ${reprovados}</p>`)
-
-        // Faltado: 1. Ordenação das notas  2. mosta a media geral da turma       
+       
+       
+             
     </script>
 
 </body>
