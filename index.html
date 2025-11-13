@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--
-        Nome dos Participantes:
+        Nomes dos Participantes:
             1. Ana Karolina Rodrigues dos Santos
             2. Cíntia Costa Ferreira
             3. Francisca Samira Bastos Gomes
@@ -29,17 +29,17 @@
         ]
 
         for(let aluno of turma) {
-        aluno.nota1 = parseFloat(prompt("Digite a nota 1 do aluno" + aluno.nome));
-            while(isNaN(aluno.nota1) || aluno.nota1 < 0 || aluno.nota1 > 10) {
-                aluno.nota1 = parseFloat(prompt("Resposta Inválida! Digite novamente uma nota de 0 a 10 para o aluno: " + aluno.nome))
-            };
+            aluno.nota1 = parseFloat(prompt("Digite a nota da Avaliação 1 do aluno: " + aluno.nome));
+                while(isNaN(aluno.nota1) || aluno.nota1 < 0 || aluno.nota1 > 10) {
+                    aluno.nota1 = parseFloat(prompt("Resposta fornecida está Inválida! Digite novamente uma nota de 0 a 10 para o aluno: " + aluno.nome))
+                };
 
-        aluno.nota2 = parseFloat(prompt("Digite a nota 2 do aluno" + aluno.nome));
-            while(isNaN(aluno.nota2) || aluno.nota2 < 0 || aluno.nota2 > 10) {
-                aluno.nota2 = parseFloat(prompt("Resposta Inválida! Digite novamente uma nota de 0 a 10 para o aluno: " + aluno.nome))
-            };
+            aluno.nota2 = parseFloat(prompt("Digite a nota da Avaliação 2 do aluno: " + aluno.nome));
+                while(isNaN(aluno.nota2) || aluno.nota2 < 0 || aluno.nota2 > 10) {
+                    aluno.nota2 = parseFloat(prompt("Resposta fornecida está Inválida! Digite novamente uma nota de 0 a 10 para o aluno: " + aluno.nome))
+                };
 
-        aluno.media = (aluno.nota1 + aluno.nota2) / 2;
+            aluno.media = (aluno.nota1 + aluno.nota2) / 2;
         }
         
         let aprovados = 0;
@@ -64,10 +64,13 @@
         }
 
         for(let i = 0; i < turma.length; i++){
-            document.write("A média do aluno " + turma[i].nome + " foi: " + turma[i].media + '</br>');
+            document.write("A média do aluno " + "<strong>" + turma[i].nome + "</strong>" + " foi: " + turma[i].media + '</br>');
         }
-       document.write("aprovados: " + aprovados +'</br>' );
-       document.write("reprovados: " + reprovados);
+
+        document.write("<hr>")
+        
+       document.write("1. Aprovados: " + aprovados + '</br>' );
+       document.write("2. Reprovados: " + reprovados);
 
 
        
