@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--
         Nome dos Participantes:
-            1. Gabriel da Silva Pedrosa
+            1. Ana Karolina Rodrigues dos Santos
             2. Cíntia Costa Ferreira
-            3.
-            4.
-            5.
-            6.
+            3. Francisca Samira Bastos Gomes
+            4. Gabriel da Silva Pedrosa
+            5. Jefferson Matheus Barbosa do Nascimento
+            6. 
     
     -->
     <title>Trabalho Raciocínio Lógico Algoritimico - RLA</title>
@@ -53,6 +53,19 @@
             }
         }
 
+        for(let i = 0; i < turma.length -1; i++){
+            for(let j = 0; j < turma.length -1 -i; j++){
+                if(turma[j].media > turma[j+1].media){
+                let aux = turma[j]
+                turma[j] = turma[j+1]
+                turma[j+1] = aux
+                }
+            }
+        }
+
+        for(let i = 0; i < turma.length; i++){
+            document.write("A média do aluno " + turma[i].nome + " foi: " + turma[i].media + '</br>');
+        }
        document.write("aprovados: " + aprovados +'</br>' );
        document.write("reprovados: " + reprovados);
 
